@@ -1,0 +1,33 @@
+﻿@model List<WebParqueo.Models.Ajustes>
+
+@{
+    ViewBag.Title = "Registrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Nuevo Ajuste</h4>
+            </div>
+            <div class="panel-body">
+                <form action="@Url.Action("Registrar","Ajustes")" method="post">
+                    <div class="form-group">
+                        <label>NombreParqueo</label>
+                        <input type="text" class="form-control" name="NombreParqueo" />
+                    </div>
+                    <div class="form-group">
+                        <label>CantidadParqueo</label>
+                        <input type="text" class="form-control" name="cantidadParqueo" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <a class="btn btn-warning" href="@Url.Action("Inicio","Ajustes")">Volver</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

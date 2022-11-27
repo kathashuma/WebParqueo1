@@ -1,0 +1,49 @@
+﻿@model List<WebParqueo.Models.Ajustes>  
+
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Lista de Parqueos</h4>
+            </div>
+            <div class="panel-body">
+                <a class="btn btn-success" href="@Url.Action("Registrar","Ajustes")">Crear Cliente</a>
+                <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID_Ajustes</th>
+                                <th>NombreParqueo</th>
+                                <th>CantidadParqueo</th>
+                                <th style="width:150px"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (WebParqueo.Models.Ajustes item in Model)
+                            {
+                                <tr>
+                                    <td>@item.ID_Ajustes</td>
+                                    <td>@item.NombreParqueo</td>
+                                    <td>@item.CantidadParqueo</td>
+                                    
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="@Url.Action("Editar","Ajustes", new { ID = item.ID_Ajustes })">Editar</a>
+                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Eliminar","Ajustes", new { ID = item.ID_Ajustes })">Eliminar</a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

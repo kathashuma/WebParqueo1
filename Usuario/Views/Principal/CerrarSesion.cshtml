@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "CerrarSesion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="row" style="margin-top:30px">
+        <div class="col-sm-12">
+
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h4>Cerrar Sesión</h4>
+                </div>
+                <div class="panel-body">
+                    <form action="@Url.Action("CerrarSesion","Sesion")" method="post">
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                            <button type="submit" name="button" class="btn btn-primary btn-sm">Cerrar Sesion</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

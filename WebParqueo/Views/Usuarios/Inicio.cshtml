@@ -1,0 +1,53 @@
+﻿@model List<WebParqueo.Models.Usuarios>
+
+
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Lista de Usuarios</h4>
+            </div>
+            <div class="panel-body">
+                <a class="btn btn-success" href="@Url.Action("Registrar","Usuarios")">Crear Usuario</a>
+                <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID_Usuario</th>
+                                <th>Usuario</th>
+                                <th>Clave</th>
+                                <th>NivelUsuario</th>
+                                <th style="width:150px"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (WebParqueo.Models.Usuarios item in Model)
+                            {
+                                <tr>
+                                    <td>@item.ID_Usuario</td>
+                                    <td>@item.Usuario</td>
+                                    <td>@item.Clave</td>
+                                    <td>@item.NivelUsuario</td>
+
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="@Url.Action("Editar","Usuarios", new { ID = item.ID_Usuario })">Editar</a>
+                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Eliminar","Usuarios", new { ID = item.ID_Usuario })">Eliminar</a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

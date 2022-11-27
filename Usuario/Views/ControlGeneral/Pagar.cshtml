@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Pagar";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Pagar</h4>
+            </div>
+            <div class="panel-body">
+                <form action="@Url.Action("Pagar","ControlGeneral")" method="post">
+                    <div class="form-group">
+                        <label>Número de Placa:</label>
+                        <input type="text" class="form-control" name="Placa" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo de vehículo:</label>
+                        <input type="text" class="form-control" name="NombreParqueo" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo de vehículo:</label>
+                        <input type="text" class="form-control" name="Tipo" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nombre de Usuario:</label>
+                        <input type="text" class="form-control" name="Usuario" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Estado:</label>
+                        <input type="text" class="form-control" name="Estado" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Pagar</button>
+                    <a class="btn btn-warning" href="@Url.Action("Inicio","ControlGeneral")">Volver</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
